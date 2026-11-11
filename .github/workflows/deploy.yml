@@ -1,0 +1,30 @@
+name: Deploy no cPanel
+
+# A cada push no main, pede ao cPanel da HomeHost para puxar o GitHub e rodar o .cpanel.yml.
+# Segredos no GitHub (Settings > Secrets and variables > Actions):
+#   CPANEL_HOST  ex.: engfab.com.br (o painel responde na porta 2083)
+#   CPANEL_USER  engfabc
+#   CPANEL_TOKEN token de API criado no cPanel (Segurança > Gerenciar tokens de API)
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Puxar e publicar no cPanel
+        env:
+          HOST: ${{ secrets.CPANEL_HOST }}
+          USER: ${{ secrets.CPANEL_USER }}
+          TOKEN: ${{ secrets.CPANEL_TOKEN }}
+        run: |
+          REPO="/home/$USER/repositories/engfab-site"
+          chamar() {
+            r=$(curl -sS -H "Authorization: cpanel $USER:$TOKEN" "https://$HOST:2083/execute/$1")
+            echo "$r"
+            echo "$r" | grep -q '"status":1' || { echo "falhou: $1"; exit 1; }
+          }
+          chamar "VersionControl/update?repository_root=$REPO&branch=main"
+          chamar "VersionControlDeployment/create?repository_root=$REPO"

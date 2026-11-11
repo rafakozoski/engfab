@@ -1,0 +1,10 @@
+---
+# Deploy do cPanel (HomeHost). Copia os arquivos do repositório para a pasta do site.
+# Só copia e sobrescreve: nunca apaga arquivo que já está no servidor.
+# FASE DE TESTE: publica em public_html/novo/. Trocar para public_html/ só com
+# aprovação do cliente, confirmação do Rafael e backup do site atual feito.
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/engfabc/public_html/novo/
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp -R * $DEPLOYPATH
