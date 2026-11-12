@@ -20,7 +20,7 @@ jobs:
           USER: ${{ secrets.CPANEL_USER }}
           TOKEN: ${{ secrets.CPANEL_TOKEN }}
         run: |
-          REPO="/home/$USER/repositories/engfab-site"
+          REPO="/home/$USER/repositories/engfab"
           chamar() {
             r=$(curl -sS -H "Authorization: cpanel $USER:$TOKEN" "https://$HOST:2083/execute/$1")
             echo "$r"
