@@ -325,3 +325,26 @@ a.contato-card:hover b{color:var(--azul)}
 @media (max-width:1080px){.outros-5{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:760px){.outros-5{grid-template-columns:1fr 1fr}}
 @media (max-width:480px){.outros-5{grid-template-columns:1fr}}
+/* blog */
+.post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.post-card{display:flex;flex-direction:column;background:var(--tinta);border-radius:var(--raio);overflow:hidden;transition:transform .2s ease}
+.post-card:hover{transform:translateY(-3px)}
+.post-img{aspect-ratio:16/10;overflow:hidden}
+.post-img img{width:100%;height:100%;object-fit:cover}
+.post-txt{padding:22px 24px 26px}
+.post-txt time{font-size:.8rem;font-weight:500;color:var(--texto-2)}
+.post-txt h3{font-size:1.12rem;margin-top:6px}
+.post-txt p{color:var(--texto-2);font-size:.92rem;margin-top:6px}
+.artigo{max-width:760px;margin-inline:auto}
+.artigo-capa{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--raio);margin-bottom:36px}
+.artigo p,.artigo li{font-size:1.05rem;line-height:1.75;color:var(--texto-2)}
+.artigo p+p{margin-top:18px}
+.artigo h2{font-size:1.45rem;margin:40px 0 12px}
+.artigo ul{margin:16px 0;padding-left:22px}
+.artigo li+li{margin-top:8px}
+.artigo strong{color:var(--texto);font-weight:600}
+.artigo a{color:var(--azul);text-decoration:underline;text-underline-offset:3px}
+.artigo .artigo-servico{margin-top:36px;padding-top:24px;border-top:1px solid var(--linha)}
+.artigo .artigo-voltar{margin-top:8px}
+@media (max-width:980px){.post-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.post-grid{grid-template-columns:1fr}.artigo h2{font-size:1.25rem}}

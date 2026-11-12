@@ -2,7 +2,7 @@
 // Formulário de orçamento da home ENGFAB. Envia para o e-mail da ENGFAB com o anexo (até 2 MB).
 header('Content-Type: application/json; charset=utf-8');
 
-$destino   = 'contato@engfab.com.br';
+$destino   = 'teste@engfab.com.br'; // TESTE TEMPORÁRIO: voltar para contato@engfab.com.br depois do teste
 $remetente = 'site@engfab.com.br'; // remetente do mesmo domínio do servidor, para o e-mail não cair no spam
 
 function responder($ok, $msg, $code = 200) {

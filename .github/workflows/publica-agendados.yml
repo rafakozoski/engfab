@@ -1,0 +1,44 @@
+name: Publica posts agendados do blog
+
+# Todo dia às 06h (Brasília): move para blog/ os posts de .agendados/ cuja data chegou,
+# comita e publica no cPanel. Se não tiver post para hoje, não faz nada.
+on:
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    outputs:
+      publicou: ${{ steps.commit.outputs.publicou }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: node .github/scripts/publica-agendados.mjs
+
+      - name: Comitar se publicou
+        id: commit
+        run: |
+          if [ -n "$(git status --porcelain blog .agendados)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add blog .agendados
+            git commit -m "Blog: publica posts agendados de $(TZ=America/Sao_Paulo date +%F)"
+            git pull --rebase origin main
+            git push
+            echo "publicou=sim" >> "$GITHUB_OUTPUT"
+          fi
+
+  # push feito pelo próprio GitHub não dispara o deploy.yml, então chama aqui
+  deploy:
+    needs: publicar
+    if: needs.publicar.outputs.publicou == 'sim'
+    uses: ./.github/workflows/deploy.yml
+    secrets: inherit
