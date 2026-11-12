@@ -20,6 +20,8 @@ jobs:
           USER: ${{ secrets.CPANEL_USER }}
           TOKEN: ${{ secrets.CPANEL_TOKEN }}
         run: |
+          # aceita o host com ou sem https://, porta ou caminho
+          HOST="${HOST#*://}"; HOST="${HOST%%/*}"; HOST="${HOST%%:*}"
           REPO="/home/$USER/repositories/engfab"
           chamar() {
             r=$(curl -sS -H "Authorization: cpanel $USER:$TOKEN" "https://$HOST:2083/execute/$1")
