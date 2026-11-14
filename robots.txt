@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /enviar.php
+
+Sitemap: https://engfab.com.br/sitemap.xml

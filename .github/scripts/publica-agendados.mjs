@@ -55,4 +55,16 @@ for (const data of datas) {
 }
 
 fs.writeFileSync(LISTAGEM, listagem);
+
+// coloca os posts publicados no sitemap.xml
+const SITEMAP = path.join(RAIZ, "sitemap.xml");
+if (publicados.length && fs.existsSync(SITEMAP)) {
+  let sm = fs.readFileSync(SITEMAP, "utf8");
+  for (const slug of publicados) {
+    const loc = `https://engfab.com.br/blog/${slug}/`;
+    if (!sm.includes(loc)) sm = sm.replace("</urlset>", `  <url><loc>${loc}</loc><lastmod>${hoje}</lastmod></url>
+</urlset>`);
+  }
+  fs.writeFileSync(SITEMAP, sm);
+}
 console.log(publicados.length ? `Publicados: ${publicados.join(", ")}` : "Nenhum post agendado pra hoje.");
