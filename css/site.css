@@ -370,3 +370,34 @@ header.rolou{box-shadow:0 10px 30px -14px rgba(0,0,0,.55)}
   .anima .rv{transform:none;transition:opacity .5s ease}
 }
 @keyframes aparece{from{opacity:0}to{opacity:1}}
+
+/* portfólio por categoria: faixa que desliza e abre em grade */
+.gal-topo{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:12px}
+.cat{margin-top:44px}
+.cat-topo{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+.cat-topo h3{font-size:1.15rem;color:#fff}
+.cat-topo h3 span{font-size:.82rem;font-weight:400;color:var(--texto-esc-2);margin-left:8px;white-space:nowrap}
+.cat-nav{display:flex;gap:8px;flex:none}
+.cat-nav button{font:inherit;border:0;cursor:pointer;color:#fff;background:rgba(255,255,255,.08);border-radius:999px;height:40px;transition:background .15s}
+.cat-nav button:hover{background:rgba(255,255,255,.16)}
+.cat-nav button:disabled{opacity:.3;cursor:default}
+.cat-ant,.cat-prox{width:40px;display:grid;place-items:center}
+.cat-ant svg,.cat-prox svg{width:18px;height:18px}
+.cat-abrir{padding:0 18px;font-size:.88rem;font-weight:500}
+.cat-trilho{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 42px) / 4);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.cat-trilho::-webkit-scrollbar{display:none}
+.cat-trilho .foto{scroll-snap-align:start}
+.cat.aberta .cat-trilho,.tudo-aberto .cat-trilho{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);overflow:visible}
+.cat.aberta .cat-ant,.cat.aberta .cat-prox,.tudo-aberto .cat-ant,.tudo-aberto .cat-prox{display:none}
+@media (max-width:980px){
+  .cat-trilho{grid-auto-columns:calc((100% - 28px) / 3)}
+  .cat.aberta .cat-trilho,.tudo-aberto .cat-trilho{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:640px){
+  .cat-trilho{grid-auto-columns:78%;gap:10px}
+  .cat.aberta .cat-trilho,.tudo-aberto .cat-trilho{grid-template-columns:1fr 1fr}
+  .cat-ant,.cat-prox{display:none}
+  .cat-topo{align-items:flex-end}
+  .cat-topo h3 span{display:block;margin:2px 0 0}
+  .ver-tudo{width:100%;justify-content:center}
+}
