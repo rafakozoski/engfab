@@ -42,3 +42,28 @@ document.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click
     var c=b.dataset.cat; fotos.forEach(function(f){f.hidden=!(c==='todos'||f.dataset.cat===c);});
   });});
 })();
+
+// animações: blocos aparecem ao rolar, cabeçalho ganha sombra, número do "+10 anos" conta
+(function(){
+  var h=document.querySelector('header');
+  function topo(){h&&h.classList.toggle('rolou',window.scrollY>10);}
+  topo(); window.addEventListener('scroll',topo,{passive:true});
+  if(!('IntersectionObserver' in window)) return;
+  var sel='main section:not(.hero) .titulo,main section:not(.hero) .sub,.serv,.prod,.outro,.proj,.num,.card-esc,.card-clr,.hub,.post-card,.lista-card,.texto p,.contato-card,.mapa,.passos>*,.faq details,.logos-grid .logo-cli,.fotos .foto,.materiais,.artigo>*,.form-orc,.orc-contatos';
+  var els=[].slice.call(document.querySelectorAll(sel));
+  document.documentElement.classList.add('anima');
+  els.forEach(function(el){
+    var irmaos=[].filter.call(el.parentNode.children,function(x){return els.indexOf(x)>-1;});
+    el.style.setProperty('--d',(Math.min(irmaos.indexOf(el),5)*0.08)+'s');
+    el.classList.add('rv');
+  });
+  function limpa(el){el.classList.remove('rv','rv-on');el.style.removeProperty('--d');}
+  var io=new IntersectionObserver(function(ent){ent.forEach(function(e){
+    if(!e.isIntersecting) return;
+    var el=e.target; io.unobserve(el); el.classList.add('rv-on');
+    setTimeout(function(){limpa(el);},1400); // devolve os efeitos de hover originais
+    var b=el.classList.contains('num')&&el.querySelector('b'), m=b&&b.textContent.match(/^\+(\d+)(.*)$/);
+    if(m){var fim=+m[1],t0=null;(function passo(t){t0=t0||t;var p=Math.min((t-t0)/1200,1);b.textContent='+'+Math.round(fim*(1-Math.pow(1-p,3)))+m[2];if(p<1)requestAnimationFrame(passo);})(performance.now());}
+  });},{rootMargin:'0px 0px -8% 0px',threshold:0.08});
+  els.forEach(function(el){io.observe(el);});
+})();
