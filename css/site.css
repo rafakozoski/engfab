@@ -292,7 +292,8 @@ nav a[aria-current="page"]{color:#fff;font-weight:500}
 .proj p{color:var(--texto-2);font-size:.92rem;margin-top:6px}
 
 /* clientes */
-.logos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.logos-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:40px}
+.logos-grid>*{flex:0 0 calc((100% - 32px) / 3)}
 .logos-grid .logo-cli{width:auto;height:140px}
 .logos-grid .logo-cli img{max-height:64px}
 
@@ -310,7 +311,8 @@ a.contato-card:hover b{color:var(--azul)}
   .bloco-grid,.contato-grid{grid-template-columns:1fr;gap:36px}
   .cols-3,.hub-grid{grid-template-columns:1fr 1fr}
   .fotos{grid-template-columns:repeat(3,1fr)}
-  .proj-grid,.logos-grid{grid-template-columns:1fr 1fr}
+  .proj-grid{grid-template-columns:1fr 1fr}
+  .logos-grid>*{flex-basis:calc((100% - 16px) / 2)}
 }
 @media (max-width:640px){
   .cols-3,.hub-grid,.proj-grid{grid-template-columns:1fr}
