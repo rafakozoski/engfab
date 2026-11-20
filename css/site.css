@@ -401,3 +401,5 @@ header.rolou{box-shadow:0 10px 30px -14px rgba(0,0,0,.55)}
   .cat-topo h3 span{display:block;margin:2px 0 0}
   .ver-tudo{width:100%;justify-content:center}
 }
+.cat-conta{font-size:.88rem;color:var(--texto-esc-2)}
+.titulo+.sub+.cat,.titulo+.cat{margin-top:28px}
