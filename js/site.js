@@ -95,7 +95,8 @@ document.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click
   var fotos=[].slice.call(document.querySelectorAll('.hero-capa .hero-fundo'));
   if(fotos.length<2) return;
   function carregar(){fotos.forEach(function(f){if(f.dataset.src){f.src=f.dataset.src;f.removeAttribute('data-src');}});}
-  if(document.readyState==='complete') carregar(); else window.addEventListener('load',carregar);
+  // carrega as outras fotos logo depois da primeira, sem esperar o resto da página
+  if(fotos[0].complete) setTimeout(carregar,300); else {fotos[0].addEventListener('load',function(){setTimeout(carregar,300);}); setTimeout(carregar,2500);}
   var i=0;
   setInterval(function(){
     if(document.hidden) return;
