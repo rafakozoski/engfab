@@ -1,0 +1,56 @@
+# Site ENGFAB (estático, publicado pelo GitHub via cPanel). Substitui o .htaccess do Construtor Fácil.
+# Backup do original: agencia/clientes/engfab/backup-site-antigo/htaccess-sitepro.txt
+# Atenção: se alguém publicar pelo Construtor Fácil (Site.pro), ele reescreve este arquivo e o site antigo volta.
+
+DirectoryIndex index.html index.php
+ErrorDocument 401 "Unauthorized"
+ErrorDocument 403 "Forbidden"
+ErrorDocument 404 /404.html
+
+<IfModule pagespeed_module>
+	ModPagespeed off
+</IfModule>
+
+RewriteEngine On
+RewriteBase /
+RewriteRule ^\.well-known/.+ - [L]
+
+# sempre https e sem www
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://engfab.com.br/$1 [L,R=301]
+
+# a home antiga do Site.pro respondia em /index.php: manda para a home nova
+RewriteRule ^index\.php$ / [L,R=301]
+
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresDefault A0
+	ExpiresByType image/png A31536000
+	ExpiresByType image/jpeg A31536000
+	ExpiresByType image/svg+xml A31536000
+	ExpiresByType image/webp A31536000
+	ExpiresByType text/css A31536000
+	ExpiresByType application/javascript A31536000
+	ExpiresByType text/javascript A31536000
+</IfModule>
+
+<IfModule mod_headers.c>
+	# CSS e JS levam ?v= no link, então podem ficar em cache por um ano
+	<FilesMatch "\.(png|jpe?g|svg|webp|css|js)$">
+		Header set Cache-Control "public, max-age=31536000, immutable"
+	</FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript image/svg+xml application/xml text/xml text/plain
+</IfModule>
+
+<FilesMatch "^(web\.config|php_errors\.log|error_log|\.cpanel\.yml)$">
+	<IfModule mod_authz_core.c>
+		Require all denied
+	</IfModule>
+	<IfModule !mod_authz_core.c>
+		Order allow,deny
+	</IfModule>
+</FilesMatch>

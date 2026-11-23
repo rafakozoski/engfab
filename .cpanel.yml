@@ -1,10 +1,9 @@
 ---
-# Deploy do cPanel (HomeHost). Copia os arquivos do repositório para a pasta do site.
-# Só copia e sobrescreve: nunca apaga arquivo que já está no servidor.
-# FASE DE TESTE: publica em public_html/novo/. Trocar para public_html/ só com
-# aprovação do cliente, confirmação do Rafael e backup do site atual feito.
+# Deploy do cPanel (HomeHost). Copia os arquivos do repositório para a raiz do site.
+# Só copia e sobrescreve: nunca apaga arquivo que já está no servidor (a pasta sitepro/ do site antigo fica intacta).
+# O .htaccess deste repositório substitui o do Construtor Fácil (backup em agencia/clientes/engfab/backup-site-antigo/).
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/engfabc/public_html/novo/
-    - /bin/mkdir -p $DEPLOYPATH
+    - export DEPLOYPATH=/home/engfabc/public_html/
     - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp .htaccess $DEPLOYPATH
