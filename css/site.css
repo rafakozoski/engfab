@@ -403,3 +403,10 @@ header.rolou{box-shadow:0 10px 30px -14px rgba(0,0,0,.55)}
 }
 .cat-conta{font-size:.88rem;color:var(--texto-esc-2)}
 .titulo+.sub+.cat,.titulo+.cat{margin-top:28px}
+
+/* rodapé com 5 colunas e links nos cards de setor */
+.rod-grid{grid-template-columns:1.3fr 1fr 1fr 1fr 1fr;gap:32px}
+@media (max-width:980px){.rod-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.rod-grid{grid-template-columns:1fr}}
+.card-esc h3 a{color:inherit}
+.card-esc h3 a:hover{color:var(--azul-claro)}
