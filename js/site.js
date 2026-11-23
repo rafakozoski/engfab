@@ -89,3 +89,18 @@ document.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click
     if(!a){bt.scrollIntoView({block:'center'});}
   });
 })();
+
+// capa: troca as fotos de fundo a cada 6 segundos
+(function(){
+  var fotos=[].slice.call(document.querySelectorAll('.hero-capa .hero-fundo'));
+  if(fotos.length<2) return;
+  function carregar(){fotos.forEach(function(f){if(f.dataset.src){f.src=f.dataset.src;f.removeAttribute('data-src');}});}
+  if(document.readyState==='complete') carregar(); else window.addEventListener('load',carregar);
+  var i=0;
+  setInterval(function(){
+    if(document.hidden) return;
+    var prox=(i+1)%fotos.length;
+    if(!fotos[prox].complete||!fotos[prox].naturalWidth) return;
+    fotos[i].classList.remove('ativo'); fotos[prox].classList.add('ativo'); i=prox;
+  },6000);
+})();

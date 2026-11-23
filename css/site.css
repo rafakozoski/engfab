@@ -442,3 +442,15 @@ footer img{height:48px}
   .hero-capa .hero-fundo{object-position:60% 30%}
   .hero-capa::before{background:linear-gradient(0deg,var(--navy-950) 0%,rgba(8,17,31,.88) 45%,rgba(8,17,31,.55) 100%)}
 }
+
+/* rotação das fotos da capa */
+.hero-capa .hero-fundo{animation:none;opacity:0;transition:opacity 1.6s ease}
+.hero-capa .hero-fundo.ativo{opacity:1}
+
+/* capa: faixa fixa à esquerda e a foto começa depois, com degradê */
+@media (min-width:901px){
+  .hero-capa .hero-fundo{left:560px;width:calc(100% - 560px)}
+  .hero-capa::before{background:linear-gradient(90deg,var(--navy-950) 0,var(--navy-950) 560px,rgba(8,17,31,.78) calc(560px + 14%),rgba(8,17,31,.25) 100%),linear-gradient(0deg,var(--navy-950) 0%,rgba(8,17,31,0) 30%)}
+}
+.hero-int.hero-capa{padding-block:88px 110px}
+@media (max-width:900px){.hero-int.hero-capa{padding-block:48px 72px}}
