@@ -1,0 +1,35 @@
+# ENGFAB Soluções Industriais
+
+> Indústria de usinagem de precisão, caldeiraria e manutenção industrial com fábrica própria em Pinhais (PR), região de Curitiba. Fabrica peças sob encomenda com CNC 5 eixos e medição tridimensional, componentes para máquinas de envase e dosagem (inclusive bombas dosadoras com pistão e camisa em cerâmica técnica de alumina 99%), engenharia reversa e nacionalização de peças importadas. Atende indústrias farmacêuticas, cosméticas e alimentícias de todo o Brasil.
+
+Contato: contato@engfab.com.br, WhatsApp +55 41 99998-0634, https://engfab.com.br/contato/
+
+## Serviços principais
+- [Usinagem](https://engfab.com.br/usinagem/): Peças, máquinas e equipamentos sob encomenda, com usinagem CNC e controle dimensional.
+- [Caldeiraria](https://engfab.com.br/caldeiraria/): Tanques, equipamentos e estruturas em aço carbono e inox, com acabamento sanitário.
+- [Manutenção industrial](https://engfab.com.br/manutencao-industrial/): Preventiva, preditiva e corretiva, em chamados pontuais ou com contrato.
+- [Montagem industrial](https://engfab.com.br/montagem-industrial/): Montagem mecânica, elétrica e de instrumentação, com tubulações e estruturas.
+- [Engenharia](https://engfab.com.br/engenharia/): Projeto conceitual, básico e detalhado, além de consultoria e estudos.
+- [Adequação NR-12](https://engfab.com.br/adequacao-nr-12/): Da apreciação de risco à documentação com ART, no formato turn key.
+
+## Especialidades e setores
+- [Usinagem de precisão](https://engfab.com.br/usinagem-de-precisao/): Usinagem de alta precisão em inox, aço liga e polímeros para as indústrias farmacêutica, cosmética e alimentícia, com CNC 5 eixos e medição em máquina tridimensional. Atendemos todo o Brasil.
+- [Usinagem CNC 5 eixos](https://engfab.com.br/usinagem-cnc-5-eixos/): Usinagem CNC 5 eixos para peças com geometria complexa, furos inclinados e superfícies 3D, em uma única fixação e com medição tridimensional. Fábrica no Paraná, atendimento em todo o Brasil.
+- [Engenharia reversa](https://engfab.com.br/engenharia-reversa/): Peça quebrou e não tem desenho? Fazemos engenharia reversa: digitalizamos a peça, refazemos o projeto em 3D, corrigimos o ponto de falha e fabricamos. Atendemos indústrias de todo o Brasil.
+- [Nacionalização de peças](https://engfab.com.br/nacionalizacao-de-pecas/): Fabricamos no Brasil peças de reposição de máquinas importadas, com prazo de dias em vez de semanas, a partir da peça original e com a mesma função na máquina. Atendimento em todo o Brasil.
+- [Peças para máquinas de envase](https://engfab.com.br/pecas-para-maquinas-de-envase/): Pistões e camisas de dosagem em inox e cerâmica técnica, bicos de enchimento, válvulas, agitadores e componentes para linhas de envase das indústrias cosmética, farmacêutica e alimentícia.
+- [Peças de formato (change parts)](https://engfab.com.br/pecas-de-formato/): Guias, estrelas, roscas de alimentação, berços e bicos de formato para troca rápida de embalagem em linhas de envase, com projeto 3D, usinagem CNC e gravação de identificação.
+- [Tanques e equipamentos em inox](https://engfab.com.br/tanques-em-inox/): Fabricação e reforma de tanques, reservatórios, cubas e equipamentos em aço inox com polimento sanitário para as indústrias alimentícia, cosmética e farmacêutica. Curitiba e região.
+- [Manutenção preditiva](https://engfab.com.br/manutencao-preditiva/): Análise de vibração, termografia, balanceamento dinâmico e alinhamento a laser para planejar a parada antes da quebra. Atendemos indústrias em Curitiba, região e todo o Paraná.
+- [Indústria farmacêutica](https://engfab.com.br/usinagem-para-industria-farmaceutica/): Peças de precisão em inox 316L com acabamento sanitário, componentes de envase, engenharia reversa e manutenção de equipamentos para a indústria farmacêutica.
+- [Indústria cosmética](https://engfab.com.br/usinagem-para-industria-cosmetica/): Bicos e pistões de envase, peças de formato, ferramentas de torque e equipamentos de dispersão para linhas de cremes, géis e loções da indústria cosmética.
+- [Indústria alimentícia](https://engfab.com.br/usinagem-para-industria-alimenticia/): Tanques e equipamentos em inox com polimento sanitário, peças especiais usinadas e manutenção de equipamentos de processo para a indústria alimentícia.
+
+## Artigos técnicos
+- [Adequação de máquinas à NR-12: as etapas, da visita técnica à ART](https://engfab.com.br/blog/adequacao-nr-12-etapas/): Como funciona a adequação de máquinas à NR-12 na prática: levantamento, apreciação de risco, projeto, execução, validação e documentação com ART, e o que preparar para não parar a produção.
+- [Peça sem desenho técnico: como funciona a engenharia reversa de peças industriais](https://engfab.com.br/blog/peca-sem-desenho-tecnico-engenharia-reversa/): A peça quebrou e ninguém tem o desenho? Veja como a engenharia reversa recupera o projeto a partir da peça física, corrige o ponto que sempre falha e permite fabricar a reposição no Brasil.
+
+## Empresa
+- [Sobre a ENGFAB](https://engfab.com.br/sobre/)
+- [Clientes atendidos](https://engfab.com.br/clientes/)
+- [Portfólio de trabalhos](https://engfab.com.br/portfolio/)

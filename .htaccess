@@ -15,6 +15,20 @@ RewriteEngine On
 RewriteBase /
 RewriteRule ^\.well-known/.+ - [L]
 
+# URLs antigas (com acento e maiúscula) para as novas, em minúsculas: 301 direto para https (23/11/2026)
+RewriteRule ^Sobre\-nós(/.*)?$ https://engfab.com.br/sobre/ [L,R=301]
+RewriteRule ^Serviços(/.*)?$ https://engfab.com.br/servicos/ [L,R=301]
+RewriteRule ^PORTFÓLIO(/.*)?$ https://engfab.com.br/portfolio/ [L,R=301]
+RewriteRule ^CLIENTES(/.*)?$ https://engfab.com.br/clientes/ [L,R=301]
+RewriteRule ^Contate\-nos(/.*)?$ https://engfab.com.br/contato/ [L,R=301]
+RewriteRule ^Usinagem(/.*)?$ https://engfab.com.br/usinagem/ [L,R=301]
+RewriteRule ^Caldeiraria(/.*)?$ https://engfab.com.br/caldeiraria/ [L,R=301]
+RewriteRule ^Manutenção\-Industrial(/.*)?$ https://engfab.com.br/manutencao-industrial/ [L,R=301]
+RewriteRule ^Montagem\-Industrial(/.*)?$ https://engfab.com.br/montagem-industrial/ [L,R=301]
+RewriteRule ^Engenharia(/.*)?$ https://engfab.com.br/engenharia/ [L,R=301]
+RewriteRule ^NR\-12(/.*)?$ https://engfab.com.br/adequacao-nr-12/ [L,R=301]
+RewriteRule ^GRAVAÇÃO\-A\-LASER(/.*)?$ https://engfab.com.br/gravacao-a-laser/ [L,R=301]
+
 # sempre https e sem www
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\. [NC]
