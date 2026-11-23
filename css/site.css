@@ -423,3 +423,11 @@ footer img{height:48px}
 .barra-migalha .migalha a:hover{color:var(--azul)}
 .hero-int{padding-block:64px 88px}
 .hero-curto{padding-block:64px 72px}
+
+/* card inteiro clicável (o link do título cobre o card) */
+.outro{position:relative;transition:transform .2s ease,box-shadow .2s ease}
+.outro:has(h3 a):hover{transform:translateY(-3px);box-shadow:var(--sombra)}
+.outro h3 a::after{content:"";position:absolute;inset:0;border-radius:inherit}
+.outro:has(h3 a):hover h3 a{color:var(--azul)}
+.serv{position:relative}
+.serv h3 a::after{content:"";position:absolute;inset:0}
