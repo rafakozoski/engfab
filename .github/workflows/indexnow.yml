@@ -1,0 +1,40 @@
+name: IndexNow
+
+# 1x por dia avisa o Bing (IndexNow) das páginas novas, alteradas ou removidas do sitemap.
+# Só lê o site no ar (robots.txt, sitemap e a chave): não faz commit nem deploy.
+# A leitura anterior fica no cache do Actions; se o cache sumir, o próximo envio manda o sitemap inteiro.
+on:
+  schedule:
+    - cron: "30 12 * * *" # 09h30 de Brasília, depois das publicações agendadas das 06h
+  workflow_dispatch:
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SITE: https://engfab.com.br
+      CHAVE: 46aa978180dcf1d56f822d38c24b2de9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github/indexnow
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Recuperar a leitura anterior
+        uses: actions/cache/restore@v4
+        with:
+          path: indexnow-estado.json
+          key: indexnow-${{ github.run_id }}
+          restore-keys: indexnow-
+
+      - run: node .github/indexnow/indexnow.mjs "$SITE" "$CHAVE" indexnow-estado.json
+
+      - name: Guardar a leitura de hoje
+        uses: actions/cache/save@v4
+        with:
+          path: indexnow-estado.json
+          key: indexnow-${{ github.run_id }}
